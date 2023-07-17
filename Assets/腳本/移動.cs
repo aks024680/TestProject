@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using UnityEngine;
@@ -6,7 +6,7 @@ using static System.Convert;
 using static System.Math;
 
 
-public class 視角移動 : MonoBehaviour
+public class 移動 : MonoBehaviour
 {
     bool AllCollision;
     bool 目標Collision, 地板Collision;
