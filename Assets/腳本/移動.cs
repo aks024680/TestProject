@@ -36,15 +36,15 @@ public class 移動 : MonoBehaviour
         //rBody.AddForce(new Vector3(x, y, z));
         //transform.transform.Rotate(Mouse_Y,Mouse_X , 0, Space.World);
         //Cc.Move(transform.TransformDirection(new Vector3(x, 0, z)));
-        float x = Input.GetAxis("Horizontal") * MoveSpeed;
-        float z = Input.GetAxis("Vertical") * MoveSpeed;
-        float y = Input.GetAxis("UpDown") * MoveSpeed;
-
+        float x = Input.GetAxis("Horizontal") * MoveSpeed * Time.deltaTime;
+        float z = Input.GetAxis("Vertical") * MoveSpeed * Time.deltaTime;
+        float y = Input.GetAxis("UpDown") * MoveSpeed * Time.deltaTime;
+        Cursor.lockState = CursorLockMode.Locked;
         Cc = GetComponent<CharacterController>();
         Cc.Move(transform.TransformDirection(new Vector3(x, 0, z)));
         Cc.Move(new Vector3(0, y, 0));
-        Mouse_X += MouseSpeed * Input.GetAxis("Mouse X"); //水平鼠標偏移
-        Mouse_Y += -1 * MouseSpeed * Input.GetAxis("Mouse Y");//垂直鼠標偏移
+        Mouse_X += Input.GetAxis("Mouse X") * MouseSpeed * Time.deltaTime;
+        Mouse_Y += -Input.GetAxis("Mouse Y") * MouseSpeed * Time.deltaTime;
         transform.rotation = Quaternion.Euler(Mouse_Y, Mouse_X, 0);
     }
 

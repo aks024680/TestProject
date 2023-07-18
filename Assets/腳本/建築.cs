@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class 建築 : MonoBehaviour
 {
+    bool E_bool = false;
+    GameObject Temp;
     public GameObject 椅子;
-    // Start is called before the first frame update
+    public float 距離 = 10;
     void Start()
     {
 
     }
-    bool E_bool = false;
-    GameObject Temp;
-    // Update is called once per frame
     void Update()
     {
 
@@ -35,10 +34,15 @@ public class 建築 : MonoBehaviour
         }
         if (!Input.GetKeyDown(KeyCode.E) && E_bool == true)
         {
-            if (Physics.Raycast(ray, out hit, 100f))
-            {
-                Temp.transform.localPosition = hit.point; 
-            }           
+            Vector3 t = transform.TransformDirection(transform.localPosition) * 15;
+            Debug.DrawRay(transform.position, t,Color.black);
+
+
+
+            //if (Physics.Raycast(ray, out hit, 距離))
+            //{
+            //    Temp.transform.localPosition = hit.point;
+            //}
         }
     }
 }

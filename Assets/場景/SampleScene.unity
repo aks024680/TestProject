@@ -177,7 +177,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 581441250}
   m_Lens:
-    FieldOfView: 65.6
+    FieldOfView: 82
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -448,6 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u6905\u5B50": {fileID: 4476138102260429231, guid: 0e99ced7481682743a99c37ab344a001, type: 3}
+  "\u8DDD\u96E2": 8
 --- !u!114 &581441257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,8 +463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "\u76EE\u6A19": {fileID: 0}
   "\u5730\u677F": {fileID: 0}
-  MoveSpeed: 0.5
-  MouseSpeed: 4
+  MoveSpeed: 70
+  MouseSpeed: 400
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +725,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 65.6
+  field of view: 82
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
