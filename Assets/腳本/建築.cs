@@ -7,8 +7,10 @@ public class 建築 : MonoBehaviour
 {
     bool E_bool = false;
     GameObject Temp;
+    public float 距離 = 5;
     public GameObject 椅子;
-    public float 距離 = 10;
+    public GameObject gobj_super;
+
     void Start()
     {
 
@@ -29,19 +31,23 @@ public class 建築 : MonoBehaviour
             else
             {
                 Temp = Instantiate(椅子);
+                Temp.transform.parent = gobj_super.transform;
                 E_bool = true;
             }
         }
         if (!Input.GetKeyDown(KeyCode.E) && E_bool == true)
         {
-            Vector3 t = transform.TransformDirection(transform.localPosition* 15) ;
-            Debug.DrawRay(transform.position, t,Color.black);
+            Debug.DrawRay(transform.position, transform.forward * 距離, Color.black);
 
-
+            Temp.transform.position = transform.forward * 距離;
 
             //if (Physics.Raycast(ray, out hit, 距離))
             //{
             //    Temp.transform.localPosition = hit.point;
+            //}
+            //else
+            //{
+            //    Temp.transform.position = transform.forward * 距離;
             //}
         }
     }
