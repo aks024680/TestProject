@@ -34,7 +34,7 @@ public class 建築 : MonoBehaviour
         }
         if (!Input.GetKeyDown(KeyCode.E) && E_bool == true)
         {
-            Vector3 t = transform.TransformDirection(transform.localPosition) * 15;
+            Vector3 t = transform.TransformDirection(transform.localPosition* 15) ;
             Debug.DrawRay(transform.position, t,Color.black);
 
 
