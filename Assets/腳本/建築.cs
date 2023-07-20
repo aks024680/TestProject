@@ -37,18 +37,20 @@ public class 建築 : MonoBehaviour
         }
         if (!Input.GetKeyDown(KeyCode.E) && E_bool == true)
         {
+
             Debug.DrawRay(transform.position, transform.forward * 距離, Color.black);
-
-            Temp.transform.position = transform.forward * 距離;
-
-            //if (Physics.Raycast(ray, out hit, 距離))
-            //{
-            //    Temp.transform.localPosition = hit.point;
-            //}
-            //else
-            //{
-            //    Temp.transform.position = transform.forward * 距離;
-            //}
+            if (Physics.Raycast(ray, out hit, 距離))
+            {
+                Debug.Log(hit.collider.tag );
+                if (hit.collider.tag != "物品")
+                {
+                    Temp.transform.position = hit.point;
+                }
+            }
+            else
+            {
+                Temp.transform.position = transform.position + transform.forward * 距離;
+            }
         }
     }
 }

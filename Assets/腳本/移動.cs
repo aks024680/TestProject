@@ -14,6 +14,7 @@ public class 移動 : MonoBehaviour
     public Transform 地板;
     public float MoveSpeed = 0.1f;
     public float MouseSpeed = 2;
+    public float UpDownSpeed = 0.1f;
     Rigidbody rBody;
     CharacterController Cc;
     float Mouse_X = 0, Mouse_Y = 0;
@@ -38,7 +39,7 @@ public class 移動 : MonoBehaviour
         //Cc.Move(transform.TransformDirection(new Vector3(x, 0, z)));
         float x = Input.GetAxis("Horizontal") * MoveSpeed * Time.deltaTime;
         float z = Input.GetAxis("Vertical") * MoveSpeed * Time.deltaTime;
-        float y = Input.GetAxis("UpDown") * MoveSpeed * Time.deltaTime;
+        float y = Input.GetAxis("UpDown") * UpDownSpeed * Time.deltaTime;
         Cursor.lockState = CursorLockMode.Locked;
         Cc = GetComponent<CharacterController>();
         Cc.Move(transform.TransformDirection(new Vector3(x, 0, z)));
