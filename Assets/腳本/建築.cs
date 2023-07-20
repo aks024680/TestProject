@@ -35,13 +35,13 @@ public class 建築 : MonoBehaviour
                 E_bool = true;
             }
         }
-        if (!Input.GetKeyDown(KeyCode.E) && E_bool == true)
+        else if (E_bool == true)
         {
 
             Debug.DrawRay(transform.position, transform.forward * 距離, Color.black);
             if (Physics.Raycast(ray, out hit, 距離))
             {
-                Debug.Log(hit.collider.tag );
+                Debug.Log(hit.collider.tag);
                 if (hit.collider.tag != "物品")
                 {
                     Temp.transform.position = hit.point;
@@ -50,7 +50,15 @@ public class 建築 : MonoBehaviour
             else
             {
                 Temp.transform.position = transform.position + transform.forward * 距離;
-            }
+            } if (Input.GetKeyDown(KeyCode.F))
+        {
+           
         }
+        }
+
+       
+
+
+
     }
 }
