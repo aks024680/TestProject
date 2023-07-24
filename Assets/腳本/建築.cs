@@ -29,7 +29,7 @@ public class 建築 : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))//右鍵
         {
-            Instantiate(子彈);
+            Instantiate(子彈, new Vector3(transform.position.x, transform.position.y, 0.1f), Quaternion.identity);
             return;
         }
     }
