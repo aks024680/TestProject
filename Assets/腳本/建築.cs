@@ -7,6 +7,7 @@ public class 建築 : MonoBehaviour
 {
     bool E_bool = false;
     GameObject Temp;
+    GameObject Temp2;
     public float 距離 = 7;
     public GameObject 椅子;
     public GameObject gobj_super;
@@ -19,10 +20,17 @@ public class 建築 : MonoBehaviour
     void Update()
     {
         Key();
-        if (移動bool && E_bool == false)
+        if (移動bool)
         {
-            i += 0.1f;
-            Temp.transform.position = Temp.transform.position + transform.forward * i;
+            //if (Vector3.Distance(transform.position, Temp2.transform.position) > 50)
+            //{
+            //    //Temp2.Describe();
+            //}
+            //else
+            //{
+                i += 0.05f;
+                Temp2.transform.position = Temp2.transform.position + transform.forward * i;
+            //}
         }
 
     }
@@ -40,8 +48,6 @@ public class 建築 : MonoBehaviour
             }
             else
             {
-                i = 0;
-                移動bool = false;
                 Temp = Instantiate(椅子);
                 Temp.transform.parent = gobj_super.transform;//放到父物件
                 E_bool = true;
@@ -55,10 +61,12 @@ public class 建築 : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))//右鍵
         {
-            E_bool = false;
+            i = 0;
+            Temp2 = Instantiate(椅子);
             移動bool = true;
             return;
         }
+
         if (E_bool == true)
         {
 
