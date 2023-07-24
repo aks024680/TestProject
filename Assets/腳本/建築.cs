@@ -4,33 +4,20 @@ public class 建築 : MonoBehaviour
 {
     bool E_bool = false;
     GameObject Temp物品;
-    GameObject Temp子彈;
+    //GameObject Temp子彈;
     public float 距離 = 7;
     public GameObject 椅子;
+    public GameObject 子彈;
     public GameObject gobj_super;
-    float 子彈距離 = 7;
-    bool 子彈bool = false;
+    //float 子彈距離 = 7;
+    //bool 子彈bool = false;
     void Start()
-    { 
+    {
     }
     void Update()
     {
         Key();
-        Mouse(); 
-        if (子彈bool)
-        {
-            子彈距離 += 0.05f;
-            
-            Temp子彈.transform.position = transform.position + transform.forward * 子彈距離;
-            if (子彈距離 > 20)
-            {
-                Debug.Log(子彈距離);
-                子彈距離 = 0;
-                子彈bool = false;
-                Destroy(Temp子彈);
-                
-            }
-        }
+        Mouse();
     }
     private void Mouse()
     {
@@ -42,9 +29,7 @@ public class 建築 : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))//右鍵
         {
-            Temp子彈 = Instantiate(椅子);
-            子彈bool = true;
-            
+            Instantiate(子彈);
             return;
         }
     }
