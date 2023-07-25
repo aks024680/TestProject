@@ -21,15 +21,18 @@ public class 建築 : MonoBehaviour
     }
     private void Mouse()
     {
-        if (Input.GetMouseButtonDown(0))//左鍵
+        if (Input.GetMouseButtonDown(1))//左鍵
         {
             E_bool = false;
             return;
         }
 
-        if (Input.GetMouseButtonDown(1))//右鍵
+        if (Input.GetMouseButton(0))//右鍵
         {
-            Instantiate(子彈, new Vector3(transform.position.x, transform.position.y, 0.1f), Quaternion.identity);
+            Debug.Log(Input.GetMouseButton(1));
+            GameObject temp = new GameObject();
+            temp=Instantiate(子彈, new Vector3(transform.position.x, transform.position.y-2, transform.position.z), Quaternion.identity);
+            temp.transform.parent = gobj_super.transform;
             return;
         }
     }

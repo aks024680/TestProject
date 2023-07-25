@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UIElements;
 
 public class 子彈 : MonoBehaviour
 {
-    float 子彈距離 = 7;
+    public float 速度 = 0.1f;
     void Start()
     {
 
@@ -10,11 +11,10 @@ public class 子彈 : MonoBehaviour
 
     void Update()
     {
-        子彈距離 += 0.05f;
-        transform.position = transform.forward * 子彈距離;
-        if (子彈距離 > 20)
+        transform.localPosition = transform.localPosition + transform.forward * 速度 * Time.deltaTime;
+        if (速度 * Time.deltaTime > 40)
         {
-            Debug.Log(子彈距離);
+            Debug.Log(速度 * Time.deltaTime);
             Destroy(gameObject);
         }
     }

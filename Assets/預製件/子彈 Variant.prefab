@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5f1ff37b03c0b8e469e6a0be6cf29f2d, type: 3}
       propertyPath: m_Name
-      value: "\u6905\u5B50 Variant"
+      value: "\u5B50\u5F48 Variant"
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5f1ff37b03c0b8e469e6a0be6cf29f2d, type: 3}
       propertyPath: m_TagString
@@ -85,4 +85,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6100483c52bb41448aa0438316ace3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\u4EBA\u7269": {fileID: 0}
+  "\u901F\u5EA6": 100

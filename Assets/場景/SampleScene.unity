@@ -448,7 +448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u8DDD\u96E2": 7
-  "\u6905\u5B50": {fileID: 4442049723112726423, guid: e8a7ba2db5d07ce4c8592b61ff27300e, type: 3}
+  "\u6905\u5B50": {fileID: 3721224480918274007, guid: 635ae5c760310b6469432c42a756417c, type: 3}
+  "\u5B50\u5F48": {fileID: 4442049723112726423, guid: e8a7ba2db5d07ce4c8592b61ff27300e, type: 3}
   gobj_super: {fileID: 1713119328}
 --- !u!114 &581441257
 MonoBehaviour:
